@@ -71,7 +71,7 @@ def load_model(model_name):
             return mistral_saba_model
         else:
             raise ValueError(f"Model '{model_name}' not recognized. Please select a valid model.")
-    except groq.NotFoundError as e:
+    except ChatGroq.NotFoundError as e:
         st.error(f"Model '{model_name}' not found or access denied: {e}")
         return None
     except Exception as e:
